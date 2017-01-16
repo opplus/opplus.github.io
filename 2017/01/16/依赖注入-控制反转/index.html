@@ -84,19 +84,24 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="废话不多说，单刀直入，依赖注入（DJ, Dependency Injection）和控制反转（IOC，Inversion Of Control）听上去很高大上，其实非常简单。考虑下面这个场景：
+
+举一个最简单的例子：有一个汽车流水线，流水线上有很多机器人，各自负责汽车一个部件的装配。按照正常人朴素的逻辑，Robot是依赖于Car的。下面代码是最简单的Car的模型，1234567public cla">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://oplus.space/2017/01/11/hello-world/index.html">
+<meta property="og:title" content="依赖注入&控制反转">
+<meta property="og:url" content="http://oplus.space/2017/01/16/依赖注入-控制反转/index.html">
 <meta property="og:site_name" content="浩 | oplus">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-01-11T05:44:21.950Z">
+<meta property="og:description" content="废话不多说，单刀直入，依赖注入（DJ, Dependency Injection）和控制反转（IOC，Inversion Of Control）听上去很高大上，其实非常简单。考虑下面这个场景：
+
+举一个最简单的例子：有一个汽车流水线，流水线上有很多机器人，各自负责汽车一个部件的装配。按照正常人朴素的逻辑，Robot是依赖于Car的。下面代码是最简单的Car的模型，1234567public cla">
+<meta property="og:image" content="http://www.ciaoshen.com/uploads/tij4-21/carRobot.png">
+<meta property="og:updated_time" content="2017-01-16T07:21:20.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="依赖注入&控制反转">
+<meta name="twitter:description" content="废话不多说，单刀直入，依赖注入（DJ, Dependency Injection）和控制反转（IOC，Inversion Of Control）听上去很高大上，其实非常简单。考虑下面这个场景：
+
+举一个最简单的例子：有一个汽车流水线，流水线上有很多机器人，各自负责汽车一个部件的装配。按照正常人朴素的逻辑，Robot是依赖于Car的。下面代码是最简单的Car的模型，1234567public cla">
+<meta name="twitter:image" content="http://www.ciaoshen.com/uploads/tij4-21/carRobot.png">
 
 
 
@@ -124,13 +129,13 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://oplus.space/2017/01/11/hello-world/"/>
+  <link rel="canonical" href="http://oplus.space/2017/01/16/依赖注入-控制反转/"/>
 
 
 
 
 
-  <title> Hello World | 浩 | oplus </title>
+  <title> 依赖注入&控制反转 | 浩 | oplus </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +278,7 @@ Quick">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://oplus.space/2017/01/11/hello-world/">
+  <link itemprop="mainEntityOfPage" href="http://oplus.space/2017/01/16/依赖注入-控制反转/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="oplus">
@@ -297,7 +302,7 @@ Quick">
             
             
               
-                Hello World
+                依赖注入&控制反转
               
             
           </h1>
@@ -312,8 +317,8 @@ Quick">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-11T13:44:21+08:00">
-                2017-01-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-16T15:20:56Z">
+                2017-01-16
               </time>
             
 
@@ -348,15 +353,14 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>废话不多说，单刀直入，依赖注入（DJ, Dependency Injection）和控制反转（IOC，Inversion Of Control）听上去很高大上，其实非常简单。考虑下面这个场景：</p>
+<blockquote>
+<p>举一个最简单的例子：有一个汽车流水线，流水线上有很多机器人，各自负责汽车一个部件的装配。按照正常人朴素的逻辑，Robot是依赖于Car的。<br><img src="http://www.ciaoshen.com/uploads/tij4-21/carRobot.png" alt="image"><br>下面代码是最简单的Car的模型，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Car&#123;</div><div class="line">	private int id;</div><div class="line">	public Car(int num)&#123;id=num;&#125;</div><div class="line">	public void addA()&#123;System.out.println(this+&quot; install A&quot;);&#125;</div><div class="line">	public void addB()&#123;System.out.println(this+&quot; install B&quot;);&#125;</div><div class="line">	public void addC()&#123;System.out.println(this+&quot; install C&quot;);&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>然后Robot有很多种抽象方式。最简单的依赖关系，就是把Car作为Robot函数的参数传进去。最后的start()函数，从创建新车对象，到装配A,B,C部件一气呵成，最后返回一辆装配好的汽车。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public class Robot&#123;</div><div class="line">	public Robot doA(Car c)&#123;</div><div class="line">		c.addA();return this;</div><div class="line">	&#125;</div><div class="line">	public Robot doB(Car c)&#123;</div><div class="line">		c.addB();return this;</div><div class="line">	&#125;</div><div class="line">	public Robot doC(Car c)&#123;</div><div class="line">		c.addC();return this;</div><div class="line">	&#125;</div><div class="line">	public Car start()&#123;	//一条龙服务</div><div class="line">		Car c=new Car(++count);</div><div class="line">		doA(c).doB(c).doC(c);</div><div class="line">		return c;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样的一条龙服务当然好，但既然所有操作都依赖于一个Car对象，可以把Car作为一个私有成员字段组合进来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Robot&#123;</div><div class="line">	private static int count=0;</div><div class="line">	Car car=new Car(++count);	//Car作为成员字段</div><div class="line">	public Robot doA()&#123;</div><div class="line">		car.addA();return this;</div><div class="line">	&#125;</div><div class="line">	public Robot doB()&#123;</div><div class="line">		car.addB();return this;</div><div class="line">	&#125;</div><div class="line">	public Robot doC()&#123;</div><div class="line">		car.addC();return this;</div><div class="line">	&#125;</div><div class="line">	public Car start()&#123;</div><div class="line">		doA().doB().doC();</div><div class="line">		return car;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>但上面这种做法代码是简洁了，但后果就是Car和Robot的耦合度很高。而且每生产一辆新车，都要创建一个新的机器人。为了给Robot和Car解耦，就要用到依赖注入（Dependency Injection）。其实很简单，把Car作为Robot构造函数的一个参数，就把每次都变化的Car部分独立出去了。每次不同的Car来，Robot都重复相同的装配动作。而把创建和分配Car对象的职责剥离出去，交给某个宏观控制模块来做。这样Car和Robot两个类就彻底解耦了。所以这里所谓依赖注入，注入的就是Car对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Robot&#123;</div><div class="line">	private Car car=null;</div><div class="line">	public Robot(Car c)&#123;car=c&#125;;	//Car这个变化因素，交由外部统一分配。</div><div class="line">	public Robot doA()&#123;</div><div class="line">		car.addA();return this;</div><div class="line">	&#125;</div><div class="line">	public Robot doB()&#123;</div><div class="line">		car.addB();return this;</div><div class="line">	&#125;</div><div class="line">	public Robot doC()&#123;</div><div class="line">		car.addC();return this;</div><div class="line">	&#125;</div><div class="line">	public Car start()&#123;</div><div class="line">		doA().doB().doC();</div><div class="line">		return car;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再进一步打磨一下，如果要让生产线仿真程度更高的话，可以不用Robot的构造函数来注入Car对象，而改用配置函数，我们给他取个名字比如说叫“绑定”，binding()。用来模拟机器人绑定汽车的过程。</p>
 
       
     </div>
@@ -383,15 +387,15 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/11/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/16/依赖注入-控制反转/" rel="prev" title="依赖注入&控制反转">
-                依赖注入&控制反转 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -438,17 +442,8 @@ Quick">
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -490,22 +485,6 @@ Quick">
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
